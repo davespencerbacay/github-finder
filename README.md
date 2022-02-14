@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Getting Started with Github Finder
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Demo](https://github-finder-eight-pearl.vercel.app/user/davepartner)
 
 ## Available Scripts
 
