@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import GithubContext from "../context/github/GithubContext"
 import { useParams } from "react-router-dom"
 import Spinner from "../components/layout/Spinner"
-import Repos from "../components/repos/Repos"
 import { FaCode, FaStore, FaUser, FaUserFriends } from "react-icons/fa"
+import RepoList from "../components/repos/RepoList"
 
 const User = () => {
   const githubContext = useContext(GithubContext)
@@ -20,7 +20,6 @@ const User = () => {
 
   const {
     name,
-    company,
     avatar_url,
     location,
     bio,
@@ -151,6 +150,7 @@ const User = () => {
             </div>
           </div>
         </div>
+        <RepoList repos={repos} />
       </div>
     </Fragment>
   )
