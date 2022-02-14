@@ -1,18 +1,19 @@
 import React, { useState, useContext } from "react"
 import GithubContext from "../../context/github/GithubContext"
+import AlertContext from "../../context/alert/AlertContext"
 
 const SearchUsers = () => {
   const [text, setText] = useState("")
-
   const { users, searchUsers, clearUsers } = useContext(GithubContext)
   const changeHandler = (e) => {
     setText(e.target.value)
   }
+  const { setAlert } = useContext(AlertContext)
 
   const formHandler = (e) => {
     e.preventDefault()
     if (text === "") {
-      alert("Field are required.")
+      setAlert("Field are required.", "error")
     } else {
       searchUsers(text)
       setText("")
@@ -25,7 +26,7 @@ const SearchUsers = () => {
           <div className="form-control">
             <div className="relative">
               <input
-                class="w-full pr-40 bg-gray-200 input input-lg text-black"
+                className="w-full pr-40 bg-gray-200 input input-lg text-black"
                 type="text"
                 placeholder="Search"
                 value={text}
